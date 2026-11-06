@@ -214,6 +214,7 @@ document.getElementById('rm').innerHTML=ST.map((s,i)=>'<li><b>'+(i+1)+'</b><span
 document.querySelectorAll('.tabset').forEach(ts=>ts.querySelectorAll('.tb').forEach(b=>b.addEventListener('click',()=>{const k=b.dataset.k;ts.querySelectorAll('.tb').forEach(x=>x.classList.toggle('on',x===b));ts.querySelectorAll('.tp').forEach(p=>p.classList.toggle('on',p.dataset.k===k));
  const orgs=ts.querySelectorAll('.org');orgs.forEach(o=>o.classList.toggle('on',o.dataset.k===k));
  const rt=ts.querySelector('.spermroute');if(rt)rt.querySelectorAll('.rtnode').forEach(n=>n.classList.toggle('on',n.dataset.k===k));
+ const bd=ts.querySelector('.band');if(bd&&b.dataset.x)bd.style.left=b.dataset.x+'%';
  ts.dispatchEvent(new CustomEvent('tabsel',{detail:k}))})));
 document.querySelector('[data-n=FemaleSystem] .tb.on').click();
 const maleDefault=document.querySelector('[data-n=MaleSystem] .tb.on');if(maleDefault)maleDefault.click();
